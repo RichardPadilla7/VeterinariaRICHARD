@@ -1,6 +1,6 @@
 package PaqueteCliente;
 
-// rICHARD pADILLA - 2
+// rICHARD pADILLA - 2 FDGE
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
