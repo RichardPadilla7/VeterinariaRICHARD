@@ -1,3 +1,5 @@
+package PaqueteAdministrador;
+
 import javax.swing.*;
 
 public class estadisticas {

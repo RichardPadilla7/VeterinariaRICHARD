@@ -1,5 +1,9 @@
+package PaqueteRecursos;
+
 import PaqueteAdministrador.administrador;
 import PaqueteCliente.cliente;
+import PaqueteSecretaria.secretaria;
+import PaqueteVeterinario.veterinario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class login extends conexion{
+public class login extends conexion {
     public JPanel PLogin;
     private JTextField textField1;
     private JPasswordField passwordField1;
@@ -59,52 +63,12 @@ public class login extends conexion{
                         if (rol.equals(rolSeleccionado)) {
                             JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso! Bienvenido " + usuario);
 
-                            if (rol.equals("administrador")) {
-
-                                JFrame menuFrame = new JFrame("Pantalla de Administrador");
-                                menuFrame.setContentPane(new administrador().PAdministrador);
-                                menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                menuFrame.setSize(500, 300);
-                                menuFrame.setPreferredSize(new Dimension(500, 300));
-                                menuFrame.setLocationRelativeTo(null);
-                                menuFrame.pack();
-                                menuFrame.setVisible(true);
-
-                            }else if (rol.equals("cliente")) {
-
-                                JFrame menuFrame = new JFrame("Pantalla de Usuario");
-                                menuFrame.setContentPane(new cliente().PCliente);
-                                menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                menuFrame.setSize(500, 300);
-                                menuFrame.setPreferredSize(new Dimension(500, 300));
-                                menuFrame.setLocationRelativeTo(null);
-                                menuFrame.pack();
-                                menuFrame.setVisible(true);
-
-                            }else if (rol.equals("veterinario")) {
-
-                                JFrame menuFrame = new JFrame("Pantalla de Usuario");
-                                menuFrame.setContentPane(new veterinario().PVeterinario);
-                                menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                menuFrame.setSize(500, 300);
-                                menuFrame.setPreferredSize(new Dimension(500, 300));
-                                menuFrame.setLocationRelativeTo(null);
-                                menuFrame.pack();
-                                menuFrame.setVisible(true);
-
-                            }else if (rol.equals("secretaria")) {
-
-                                JFrame menuFrame = new JFrame("Pantalla de Usuario");
-                                menuFrame.setContentPane(new secretaria().PSecretaria);
-                                menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                menuFrame.setSize(500, 300);
-                                menuFrame.setPreferredSize(new Dimension(500, 300));
-                                menuFrame.setLocationRelativeTo(null);
-                                menuFrame.pack();
-                                menuFrame.setVisible(true);
-
-                            }else {
-                                JOptionPane.showMessageDialog(null, "No existe ese usuario en el rol actual, prueba con otro rol");
+                            switch (rol) {
+                                case "administrador" -> new administrador();
+                                case "cliente" -> new cliente();
+                                case "veterinario" -> new veterinario();
+                                case "secretaria" -> new secretaria();
+                                default -> JOptionPane.showMessageDialog(null, "No existe ese usuario en el rol actual, prueba con otro rol");
                             }
 
                         } else {

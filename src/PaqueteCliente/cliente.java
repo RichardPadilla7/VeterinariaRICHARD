@@ -1,3 +1,5 @@
+package PaqueteCliente;
+
 import javax.swing.*;
 
 public class cliente {
