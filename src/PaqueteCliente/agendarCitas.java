@@ -1,6 +1,6 @@
 package PaqueteCliente;
 
-// rICHARD pADILLA
+// rICHARD pADILLA - 2
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
